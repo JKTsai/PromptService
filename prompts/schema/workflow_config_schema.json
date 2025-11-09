@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Workflow Configuration Schema",
+  "description": "Schema for validating workflow data.json configuration files",
+  "type": "object",
+  "required": [
+    "is_rag",
+    "role_definition",
+    "knowledge_domain",
+    "primary_task",
+    "response_structure"
+  ],
+  "properties": {
+    "is_rag": {
+      "type": "boolean",
+      "description": "Whether this workflow uses RAG (Retrieval-Augmented Generation)"
+    },
+    "role_definition": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Clear definition of the AI assistant's role and expertise"
+    },
+    "knowledge_domain": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "description": "Specific domain or area of knowledge this workflow covers"
+    },
+    "primary_task": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 800,
+      "description": "Main task or objective the assistant should accomplish"
+    },
+    "response_structure": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Template for how responses should be structured (supports markdown formatting)"
+    },
+    "docs": {
+      "type": "string",
+      "description": "Documentation or knowledge base content (can be 'No documents available for this task.')"
+    },
+    "additional_persona_traits": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Optional additional personality traits or characteristics"
+    },
+    "language_preference": {
+      "type": "string",
+      "enum": [
+        "zh-TW",
+        "en",
+        "auto"
+      ],
+      "default": "auto",
+      "description": "Preferred response language"
+    },
+    "expertise_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "expert",
+        "mixed"
+      ],
+      "default": "mixed",
+      "description": "Target expertise level of the intended audience"
+    },
+    "qa_list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "answer"
+        ],
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "Predefined Q&A pairs for common questions"
+    }
+  }
+}

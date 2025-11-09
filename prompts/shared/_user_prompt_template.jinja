@@ -1,0 +1,30 @@
+{# Base User Prompt Template #}
+{% block user_context %}
+{%- if conversation_history %}
+## Previous Conversation:
+{% for message in conversation_history %}
+**{{ message.role|title }}**: {{ message.content }}
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block user_query %}
+## Current Query:
+{{ user_input }}
+{% endblock %}
+
+{% block additional_context %}
+{%- if additional_context %}
+## Additional Context:
+{{ additional_context }}
+{% endif %}
+{% endblock %}
+
+{% block query_metadata %}
+{%- if query_metadata %}
+## Query Information:
+- **Timestamp**: {{ query_metadata.timestamp }}
+- **User ID**: {{ query_metadata.user_id }}
+- **Session ID**: {{ query_metadata.session_id }}
+{% endif %}
+{% endblock %}

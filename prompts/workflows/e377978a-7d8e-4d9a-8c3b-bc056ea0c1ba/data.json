@@ -1,0 +1,6 @@
+{
+  "is_rag": false,
+  "role_definition": "A helpful assistant.",
+  "response_structure": "** Your answers should be comprehensive and detailed. Prioritize the use of Markdown formatting—such as headings, bold text, bullet points (`-` or `*`), and tables—to improve clarity and readability. For complex questions, it is recommended to provide a summary upfront, followed by a detailed breakdown.",
+  "docs": ""
+}

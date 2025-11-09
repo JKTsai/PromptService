@@ -1,0 +1,15 @@
+# file_path: relative to prompts/collections/<collection_id>/
+dev:
+  morale_intro_prompt:
+    description: "MoraleAI introduction prompt"
+    file_path: "morale_intro_prompt.jinja"
+
+staging:
+  morale_intro_prompt:
+    description: "MoraleAI introduction prompt"
+    file_path: "morale_intro_prompt.jinja"
+
+prod:
+  morale_intro_prompt:
+    description: "MoraleAI introduction prompt"
+    file_path: "morale_intro_prompt.jinja"
